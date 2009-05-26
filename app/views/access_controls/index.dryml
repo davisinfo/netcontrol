@@ -2,6 +2,8 @@
   <collection: replace>
     <div>
       <table-plus  fields="this, description, internet_allowed, bw_class">
+      	<header: replace>      		
+      	</header:>
 		<controls:>
            <delete-button label="Remove" update="self"/>
            <a action="edit">Edit</a>
