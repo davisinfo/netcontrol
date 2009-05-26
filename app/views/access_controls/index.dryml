@@ -1,0 +1,13 @@
+<index-page>
+  <collection: replace>
+    <div>
+      <table-plus  fields="this, description, internet_allowed, bw_class">
+		<controls:>
+           <delete-button label="Remove" update="self"/>
+           <a action="edit">Edit</a>
+        </controls:>
+        <empty-message:>No access controls to display</empty-message:>
+      </table-plus>
+    </div>
+  </collection:>
+</index-page>

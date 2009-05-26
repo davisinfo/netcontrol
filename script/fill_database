@@ -1,0 +1,47 @@
+AccessControl.delete_all
+bwc=BwClass.find(:first,:conditions=>{:name=>'Elevi'})
+for i in 10...50
+  ac=AccessControl.new
+  ac.ip='192.168.0.'+i.to_s
+  ac.internet_allowed=true
+  ac.description='laborator timken'
+  ac.bw_class=bwc
+  ac.save!
+end
+
+for i in 10...50
+  ac=AccessControl.new
+  ac.ip='192.168.2.'+i.to_s
+  ac.internet_allowed=true
+  ac.description='laborator info'
+  ac.bw_class=bwc
+  ac.save!
+end
+
+for i in 10...50
+  ac=AccessControl.new
+  ac.ip='192.168.3.'+i.to_s
+  ac.internet_allowed=true
+  ac.description='statii de lucru clase'
+  ac.bw_class=bwc
+  ac.save!
+end
+
+for i in 10...50
+  ac=AccessControl.new
+  ac.ip='192.168.4.'+i.to_s
+  ac.internet_allowed=true
+  ac.description='laborator ael'
+  ac.bw_class=bwc
+  ac.save!
+end
+
+bwc=BwClass.find(:first,:conditions=>{:name=>'Profesori'})
+for i in 10...31
+  ac=AccessControl.new
+  ac.ip='192.168.10.'+i.to_s
+  ac.internet_allowed=true
+  ac.description='personal administrativ, profesori, director'
+  ac.bw_class=bwc
+  ac.save
+end

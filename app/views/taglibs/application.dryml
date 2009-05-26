@@ -1,0 +1,15 @@
+<include src="rapid" plugin="hobo"/>
+
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/>
+
+<set-theme name="clean"/>
+
+<def tag="app-name">Netcontrol</def>
+
+
+<def tag="input" for="boolean" attrs="name">
+  <%= hidden_field_tag(name, '0') unless attributes[:disabled] %><%=
+check_box_tag(name, '1', this, attributes) %>
+</def>

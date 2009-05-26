@@ -1,0 +1,7 @@
+<show-page>
+  <collection: replace>
+  <table-plus:access_controls fields="this">
+    <empty-message:>No access controls match your criteria</empty-message:>
+  </table-plus>
+  </collection:>
+</show-page>
