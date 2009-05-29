@@ -5,7 +5,7 @@ File.open('eth0-qos.cfg','w') do |htbCfg|
 		limit #{bwc.bw_max};
 		priority #{bwc.priority};
 		burst 2;
-		queue sfq;				
+		que sfq;				
 "
 		AccessControl.find(:all,:conditions=>{:bw_class_id=>bwc.id}).each { |ac|
 			htbCfg.puts "
