@@ -43,3 +43,17 @@ File.open('eth0-qos.cfg','w') do |htbCfg|
 };"
 	}
 end
+
+File.open('iptables.sh','w') do |iptCfg|
+	iptCfg.puts "#!/bin/bash"
+	iptCfg.puts "
+	iptables -F FORWARD
+	iptables -X FORWARD";
+	AccessControl.find(:all,:conditions=>{:internet_allowed=>true}.each { |ac|
+		iptCfg.puts "
+	iptables -A FORWARD -s #{ac.ip} -j ACCEPT
+	iptables -A FORWARD -d #{ac.ip} -j ACCEPT"	
+	}
+	iptCfg.puts " 
+	iptables -A FORWARD -j REJECT"
+end
