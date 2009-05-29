@@ -32,9 +32,9 @@ File.open('eth1-qos.cfg','w') do |htbCfg|
 					};
 				};"
 		}
-		htbCfg.puts "};
-class default { bandwidth 8; };"
+		htbCfg.puts "};"
 	}
+	htbCfg.puts "class default { bandwidth 8; };"
 end
 
 File.open('iptables.sh','w') do |iptCfg|
