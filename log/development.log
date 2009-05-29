@@ -8623,3 +8623,7 @@ DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_l
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "bw_classes" WHERE ("bw_classes"."id" = 2) [0m
 DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from send at /Users/adi/.gem/ruby/1.8/gems/hobo-0.8.7/lib/hobo/dryml/template_environment.rb:605)
 Completed in 2041ms (View: 2030, DB: 5) | 200 OK [http://192.168.0.114/access_controls]
+  [4;36;1mSQL (14.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m

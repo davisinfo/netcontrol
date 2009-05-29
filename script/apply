@@ -49,7 +49,7 @@ File.open('iptables.sh','w') do |iptCfg|
 	iptCfg.puts "
 	iptables -F FORWARD
 	iptables -X FORWARD";
-	AccessControl.find(:all,:conditions=>{:internet_allowed=>true}.each { |ac|
+	AccessControl.find(:all,:conditions=>{:internet_allowed=>true}).each { |ac|
 		iptCfg.puts "
 	iptables -A FORWARD -s #{ac.ip} -j ACCEPT
 	iptables -A FORWARD -d #{ac.ip} -j ACCEPT"	
