@@ -11,28 +11,21 @@ File.open('eth0-qos.cfg','w') do |htbCfg|
 			htbCfg.puts "
 				client #{ac.ip.gsub(".","_")} {"
 			if ac.bw_rate.nil? then
-				htbCfg.puts "
-					bandwidth #{ac.bw_class.bw_rate/8};"
+				htbCfg.puts "					bandwidth #{ac.bw_class.bw_rate/8};"
 			else
-				htbCfg.puts "
-					bandwidth #{ac.bw_rate};"
+				htbCfg.puts "					bandwidth #{ac.bw_rate};"
 			end
 			if ac.bw_max.nil? then
-				htbCfg.puts "
-					bandwidth #{ac.bw_class.bw_max};"
+				htbCfg.puts "					bandwidth #{ac.bw_class.bw_max};"
 			else
-				htbCfg.puts "
-					bandwidth #{ac.bw_max};"
+				htbCfg.puts "					bandwidth #{ac.bw_max};"
 			end
 			if ac.bw_max.nil? then
-				htbCfg.puts "
-					upload #{ac.bw_class.bw_max*3/4};"
+				htbCfg.puts "					upload #{ac.bw_class.bw_max*3/4};"
 			else
-				htbCfg.puts "
-					upload #{ac.bw_max*3/4};"
+				htbCfg.puts "					upload #{ac.bw_max*3/4};"
 			end
-			htbCfg.puts "
-					burst 2;
+			htbCfg.puts "					burst 2;
 					priority #{ac.bw_class.priority};
 					dst {
 						#{ac.ip}/32;
