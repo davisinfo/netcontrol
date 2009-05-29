@@ -1,4 +1,4 @@
-File.open('eth0-qos.cfg','w') do |htbCfg|
+File.open('eth1-qos.cfg','w') do |htbCfg|
 	BwClass.find(:all).each { |bwc|
 		htbCfg.puts "class #{bwc.name} {
 		bandwidth #{bwc.bw_rate};
@@ -32,8 +32,8 @@ File.open('eth0-qos.cfg','w') do |htbCfg|
 					};
 				};"
 		}
-		htbCfg.puts "
-};"
+		htbCfg.puts "};
+class default { bandwidth 8; };"
 	}
 end
 
