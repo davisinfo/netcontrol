@@ -9,7 +9,7 @@ File.open('eth1-qos.cfg','w') do |htbCfg|
 "
 		AccessControl.find(:all,:conditions=>{:bw_class_id=>bwc.id}).each { |ac|
 			htbCfg.puts "
-				client #{ac.ip.gsub(".","_")} {"
+				client #{ac.ip.gsub(".","_").gsub("/","_")} {"
 			if ac.bw_rate.nil? then
 				htbCfg.puts "					bandwidth #{ac.bw_class.bw_rate/8};"
 			else
