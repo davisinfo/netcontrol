@@ -28,7 +28,7 @@ File.open('eth1-qos.cfg','w') do |htbCfg|
 			htbCfg.puts "					burst 2;
 					priority #{ac.bw_class.priority};
 					dst {
-						#{ac.ip}/32;
+						#{ac.ip}#{'/32' unless ac.ip.include? '/'};
 					};
 				};"
 		}
